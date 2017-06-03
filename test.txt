@@ -1,0 +1,103 @@
+vlan0: flags=8843<UP,BROADCAST,RUNNING,SIMPLEX,MULTICAST> mtu 1500
+	options=3<RXCSUM,TXCSUM>
+	ether cc:e1:d5:0d:38:b2 
+	inet6 fe80::cee1:d5ff:fe0d:38b2%vlan0 prefixlen 64 scopeid 0xa 
+	inet6 2001:3e8:e:1700:cee1:d5ff:fe0d:38b2 prefixlen 64 autoconf 
+	inet6 2001:3e8:e:1700:899:ac27:2e9d:2905 prefixlen 64 autoconf temporary 
+	inet 45.0.250.131 netmask 0xfffffc00 broadcast 45.0.251.255
+	nd6 options=1<PERFORMNUD>
+	vlan: 1700 parent interface: en4
+	media: autoselect (1000baseT <full-duplex,energy-efficient-ethernet>)
+	status: active
+PING 45.0.248.1 (45.0.248.1): 1472 data bytes
+1480 bytes from 45.0.248.1: icmp_seq=0 ttl=255 time=1.444 ms
+1480 bytes from 45.0.248.1: icmp_seq=1 ttl=255 time=1.447 ms
+1480 bytes from 45.0.248.1: icmp_seq=2 ttl=255 time=1.237 ms
+1480 bytes from 45.0.248.1: icmp_seq=3 ttl=255 time=1.465 ms
+1480 bytes from 45.0.248.1: icmp_seq=4 ttl=255 time=2.133 ms
+
+--- 45.0.248.1 ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 1.237/1.545/2.133/0.306 ms
+PING6(1280=40+8+1232 bytes) fe80::cee1:d5ff:fe0d:38b2%vlan0 --> fe80::1700:1
+1240 bytes from fe80::1700:1%vlan0, icmp_seq=0 hlim=64 time=1.877 ms
+1240 bytes from fe80::1700:1%vlan0, icmp_seq=1 hlim=64 time=1.955 ms
+1240 bytes from fe80::1700:1%vlan0, icmp_seq=2 hlim=64 time=1.884 ms
+1240 bytes from fe80::1700:1%vlan0, icmp_seq=3 hlim=64 time=3.895 ms
+1240 bytes from fe80::1700:1%vlan0, icmp_seq=4 hlim=64 time=1.801 ms
+
+--- fe80::1700:1 ping6 statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/std-dev = 1.801/2.282/3.895/0.808 ms
+PING 8.8.8.8 (8.8.8.8): 1472 data bytes
+1480 bytes from 8.8.8.8: icmp_seq=0 ttl=52 time=5.566 ms
+1480 bytes from 8.8.8.8: icmp_seq=1 ttl=52 time=3.764 ms
+1480 bytes from 8.8.8.8: icmp_seq=2 ttl=52 time=4.054 ms
+1480 bytes from 8.8.8.8: icmp_seq=3 ttl=52 time=4.469 ms
+1480 bytes from 8.8.8.8: icmp_seq=4 ttl=52 time=1308.456 ms
+
+--- 8.8.8.8 ping statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/stddev = 3.764/265.262/1308.456/521.597 ms
+PING6(1280=40+8+1232 bytes) 2001:3e8:e:1700:899:ac27:2e9d:2905 --> 2001:4860:4860::8888
+1240 bytes from 2001:4860:4860::8888, icmp_seq=0 hlim=55 time=2.737 ms
+1240 bytes from 2001:4860:4860::8888, icmp_seq=1 hlim=55 time=2.879 ms
+1240 bytes from 2001:4860:4860::8888, icmp_seq=2 hlim=55 time=2.887 ms
+1240 bytes from 2001:4860:4860::8888, icmp_seq=3 hlim=55 time=2.758 ms
+1240 bytes from 2001:4860:4860::8888, icmp_seq=4 hlim=55 time=2.932 ms
+
+--- 2001:4860:4860::8888 ping6 statistics ---
+5 packets transmitted, 5 packets received, 0.0% packet loss
+round-trip min/avg/max/std-dev = 2.737/2.839/2.932/0.077 ms
+
+; <<>> DiG 9.8.3-P1 <<>> www.wide.ad.jp A
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 35683
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.wide.ad.jp.			IN	A
+
+;; ANSWER SECTION:
+www.wide.ad.jp.		299	IN	A	203.178.137.58
+
+;; Query time: 88 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Sat Jun  3 23:22:03 2017
+;; MSG SIZE  rcvd: 48
+
+
+; <<>> DiG 9.8.3-P1 <<>> www.wide.ad.jp AAAA
+;; global options: +cmd
+;; Got answer:
+;; ->>HEADER<<- opcode: QUERY, status: NOERROR, id: 5545
+;; flags: qr rd ra; QUERY: 1, ANSWER: 1, AUTHORITY: 0, ADDITIONAL: 0
+
+;; QUESTION SECTION:
+;www.wide.ad.jp.			IN	AAAA
+
+;; ANSWER SECTION:
+www.wide.ad.jp.		299	IN	AAAA	2001:200:dff:fff1:216:3eff:fe4b:651c
+
+;; Query time: 80 msec
+;; SERVER: 8.8.8.8#53(8.8.8.8)
+;; WHEN: Sat Jun  3 23:22:04 2017
+;; MSG SIZE  rcvd: 60
+
+ 1  10.0.248.2 (10.0.248.2)  2.698 ms
+ 2  10.0.2.49 (10.0.2.49)  2.420 ms
+ 3  10.0.2.42 (10.0.2.42)  2.272 ms
+ 4  10.0.2.61 (10.0.2.61)  1.890 ms
+ 5  vrf-cgn.class0.mx240-1.fpbl.interop-tokyo.net (45.0.2.57)  2.559 ms
+ 6  vrf-redirect.class0.mx240-2.fpbl.interop-tokyo.net (45.0.2.42)  2.401 ms
+ 7  vrf-videopacing.class0.mx240-1.fpbl.interop-tokyo.net (45.0.2.217)  2.557 ms
+ 8  vrf-redirect.class0.mx240-2.fpbl.interop-tokyo.net (45.0.2.42)  2.777 ms
+ 9  vrf-sentinel.class0.mx240-1.fpbl.interop-tokyo.net (45.0.2.113)  2.525 ms
+10  45.0.1.89 (45.0.1.89)  3.022 ms
+11  45.0.1.5 (45.0.1.5)  4.148 ms
+12  218.100.6.173 (218.100.6.173)  3.421 ms
+13  108.170.242.161 (108.170.242.161)  4.095 ms
+14  216.239.43.21 (216.239.43.21)  3.757 ms
+15  google-public-dns-a.google.com (8.8.8.8)  4.054 ms
+ 1  *

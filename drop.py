@@ -38,7 +38,7 @@ proc = subprocess.call( iping6 , shell=True)
 wping4 = "ping -c 5 -D -s 1472 8.8.8.8"
 #print("\n$"+wping4)
 proc = subprocess.call( wping4 , shell=True)
-wping6 = "sudo ping6 -c 5 -m -D -s 1232 -I "+str(args[1])+" www.wide.ad.jp"
+wping6 = "sudo ping6 -c 5 -m -D -s 1232 -I "+str(args[1])+" 2001:4860:4860::8888"
 #print("\n$"+wping6)
 proc = subprocess.call( wping6 , shell=True)
 dns4 = "dig www.wide.ad.jp A"
@@ -47,9 +47,9 @@ proc = subprocess.call( dns4 , shell=True)
 dns6 = "dig www.wide.ad.jp AAAA"
 #print("\n$"+dns6)
 proc = subprocess.call( dns6 , shell=True)
-trace4 = "traceroute -q1 -w1 -m30 www.wide.ad.jp"
+trace4 = "traceroute -q1 -w1 -m30 8.8.8.8"
 proc = subprocess.call( trace4 , shell=True)
-trace6 = "traceroute6 -q1 -w1 -m30 www.wide.ad.jp"
+trace6 = "traceroute6 -q1 -w1 -m30 2001:4860:4860::8888"
 proc = subprocess.call( trace6 , shell=True)
 v4web = "open http://www.nicovideo.jp/"
 proc = subprocess.call( v4web , shell=True)
