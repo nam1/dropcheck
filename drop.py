@@ -49,9 +49,5 @@ dns6 = "dig www.wide.ad.jp AAAA"
 proc = subprocess.call( dns6 , shell=True)
 trace4 = "traceroute -q1 -w1 -m30 8.8.8.8"
 proc = subprocess.call( trace4 , shell=True)
-trace6 = "traceroute6 -q1 -w1 -m30 2001:4860:4860::8888"
+trace6 = "traceroute6 -q1 -w1 -m30 -I 2001:4860:4860::8888"
 proc = subprocess.call( trace6 , shell=True)
-v4web = "open http://www.nicovideo.jp/"
-proc = subprocess.call( v4web , shell=True)
-v6web = "open https://ipv6.google.com/"
-proc = subprocess.call( v6web , shell=True)
