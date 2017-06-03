@@ -51,3 +51,7 @@ trace4 = "traceroute -q1 -w1 -m30 www.wide.ad.jp"
 proc = subprocess.call( trace4 , shell=True)
 trace6 = "traceroute6 -q1 -w1 -m30 www.wide.ad.jp"
 proc = subprocess.call( trace6 , shell=True)
+v4web = "open http://www.nicovideo.jp/"
+proc = subprocess.call( v4web , shell=True)
+v6web = "open https://ipv6.google.com/"
+proc = subprocess.call( v6web , shell=True)
