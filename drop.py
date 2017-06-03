@@ -1,7 +1,13 @@
 #!/usr/bin/env python
 
+from __future__ import print_function
 import sys
 import subprocess
+try:
+	from subprocess import getoutput
+except:
+	from commands import getoutput
+
 import re
 
 args = sys.argv
@@ -10,17 +16,17 @@ ifconfig = "ifconfig "+str(args[1])
 #print("\n$"+ifconfig)
 proc = subprocess.call( ifconfig , shell=True)
 v4ifconfig = "ifconfig "+str(args[1])+" |grep 'inet\s'"
-v4inet = subprocess.getoutput(v4ifconfig)
+v4inet = getoutput(v4ifconfig)
 v4address = v4inet.split(" ")
 print("\nipv4 address: "+v4address[1])
 v6ifconfig = "ifconfig "+str(args[1])+" |grep 'inet6 2001'"
-v6inet = subprocess.getoutput(v6ifconfig)
+v6inet = getoutput(v6ifconfig)
 v6address = v6inet.split(" ")
 print("\nipv6 address: "+v6address[1])
 
 
 netstat = "netstat -rn |grep default |grep "+str(args[1])
-default = subprocess.getoutput(netstat)
+default = getoutput(netstat)
 line = default.split('\n')
 v4addr = re.split('\s+',str(line[0]))
 v4gw = v4addr[1]
