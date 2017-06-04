@@ -21,7 +21,6 @@ proc = subprocess.call( ifconfig , shell=True)
 #get ipv4 address
 v4ifconfig = "ifconfig "+str(args[1])+" |grep 'inet\s'"
 v4inet = getoutput(v4ifconfig)
-<<<<<<< HEAD
 if v4inet != "" and re.match('ifconfig:\s\w+',v4inet) == None:
 	v4address = v4inet.split(" ")
 	print("\nipv4 address: "+v4address[1])
@@ -29,14 +28,6 @@ if v4inet != "" and re.match('ifconfig:\s\w+',v4inet) == None:
 else:
 	print("\nipv4 address: NG")
 	sys.stdout.flush()
-=======
-v4address = v4inet.split(" ")
-print("\nipv4 address: "+v4address[1])
-v6ifconfig = "ifconfig "+str(args[1])+" |grep 'inet6 2001'"
-v6inet = getoutput(v6ifconfig)
-v6address = v6inet.split(" ")
-print("\nipv6 address: "+v6address[1])
->>>>>>> 95aea9459a63ec4cfa1a913a8ec142c36a2a11cd
 
 #get ipv6 address
 v6ifconfig = "ifconfig "+str(args[1])+" |grep 'inet6 2001'"
